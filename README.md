@@ -22,17 +22,19 @@ s
 Path (from the pathlib package)
 ```
 
-
 ## Running the script
 Run the script with Python interpreter 3.7.6 or later.
-Pass the desired image as an argument.
+Pass the desired directory as an argument.
 
 Example usage:
 ```
-$Python3 augment.py myImage.jpg
+$Python3 augment.py ./myDirectory/
 ```
 
 The program will then prompt you for the desired augmentations.
+
+**Note:** rotations should be done in increments of 90 degrees. Any other rotation aount will result in large black bars on the sides of the images. These bars can affect your model when training.
+
 Example output:
 ```
 horizontal flip [y/n]?: y
@@ -44,6 +46,9 @@ PathToImage/myImage.jpg y y y 90
 flipping horizontally...
 flipping vertically...
 rotating 90 degrees...
+.
+.
+.
 ```
 
-The augmented image will then be saved in the `augmented_photos` directory. The image name will have the augmentations appended to the filename. In the above example, the saved image would be `myImage_h_v_r90.jpg`.
+The augmented images will then be saved in the `augmented_photos` directory. The image names will have the augmentations appended. In the above example, the saved image would be `myImage_h_v_r90.jpg`.

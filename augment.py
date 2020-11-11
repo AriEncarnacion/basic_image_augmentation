@@ -51,6 +51,8 @@ def process_imgs_in_dir(dir_path):
         if file.suffix == '.jpg' or file.suffix == '.JPG':
             print("Processing:",file.name)
             img = Image.open(file)
+            if img.mode != 'RGB':
+                img = img.convert('RGB')
             augment_image(file.name, img, horiz, vert, rot, rot_angle)
         else:
             print(file.name, "was not an image file. Skipping...")
