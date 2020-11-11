@@ -18,7 +18,7 @@ https://pillow.readthedocs.io/en/stable/installation.html
 Depending on your environment, you may need to install the following modules:
 ```
 sys
-s
+os
 Path (from the pathlib package)
 ```
 
