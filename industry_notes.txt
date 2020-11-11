@@ -1,0 +1,12 @@
+SD
+any tools and position, learn and deploy tools. develop specific tools. open ended and depends on industry.
+
+
+ML
+same thing... but developing ML algorithms. still software in the end, has requirements.
+
+major "difference" (addition) automate certain processes by creating relationships between data
+
+mindset is the same?
+
+research project is similar to data science

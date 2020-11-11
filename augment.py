@@ -61,3 +61,5 @@ augment_image(img_file, img, horiz, vert, rot, rot_angle)
 # TODO:
 #  Implement multi-photo augmentation
 #  Implement program execution on any directory
+#
+
