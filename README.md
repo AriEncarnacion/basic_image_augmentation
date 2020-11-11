@@ -1,5 +1,5 @@
 # Baic Image Augmentation with PILLOW (PIL)
-This script transforms images. Options include horizontal flip, vertical flip, and rotation.
+This script transforms JPEG images. Options include horizontal flip, vertical flip, and rotation.
 
 ## Setup
 Please ensure you have Python interpreter version 3.7.6 or later installed on your system. You can check this via:
@@ -31,9 +31,9 @@ Example usage:
 $Python3 augment.py ./myDirectory/
 ```
 
-The program will then prompt you for the desired augmentations.
-
-**Note:** rotations should be done in increments of 90 degrees. Any other rotation aount will result in large black bars on the sides of the images. These bars can affect your model when training.
+**Important notes:** 
+- This script only works on JPEG images with extensions `.jpg` or `.JPG`.
+- Rotations should be done in increments of 90 degrees. Any other rotation aount will result in large black bars on the sides of the images. These bars can affect your model when training.
 
 Example output:
 ```
@@ -51,4 +51,4 @@ rotating 90 degrees...
 .
 ```
 
-The augmented images will then be saved in the `augmented_photos` directory. The image names will have the augmentations appended. In the above example, the saved image would be `myImage_h_v_r90.jpg`.
+The augmented images will be saved in the `augmented_photos` directory. The image names will have the augmentations appended. In the above example, the saved image would be `myImage_h_v_r90.jpg`.
