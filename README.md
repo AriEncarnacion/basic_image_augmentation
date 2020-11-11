@@ -15,6 +15,13 @@ depending on your environment.
 This script also requires the PILLOW Python package. Please see how to install the package here
 https://pillow.readthedocs.io/en/stable/installation.html
 
+Depending on your environment, you may need to install the following modules:
+```
+sys
+s
+Path (from the pathlib package)
+```
+
 
 ## Running the script
 Run the script with Python interpreter 3.7.6 or later.
