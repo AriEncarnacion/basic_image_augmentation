@@ -3,8 +3,8 @@ import sys
 import os
 from pathlib import Path
 
-def augment_image(__img_file, __img, __horiz, __vert, __rot, __rot_angle):
-    print(__img_file, __horiz, __vert, __rot, __rot_angle)
+def augment_image(__img_file, __img, __horiz, __vert, __rot, __rot_angle, __clrVert):
+    print(__img_file, __horiz, __vert, __rot, __rot_angle,  __clrVert)
 
     file_path = os.path.basename(__img_file)
     save_name = os.path.splitext(path_name(file_path))[0]
@@ -26,6 +26,11 @@ def augment_image(__img_file, __img, __horiz, __vert, __rot, __rot_angle):
         rot_attb = '_r' + str(__rot_angle)
         augment_list += rot_attb
         aug_img = aug_img.rotate(int(__rot_angle)*-1, expand=True)
+        
+    if __clrVert == 'y' or __clrVert == 'Y':
+        print("inverting colors...")
+        augment_list += '_c'
+        aug_img = ImageOps.invert(aug_img)
 
     save_path = 'augmented_photos/' + save_name + augment_list + '.jpg'
     aug_img.save(save_path, quality=95)
@@ -63,6 +68,7 @@ horiz = validate_opt("horizontal flip")
 vert = validate_opt("vertical_flip")
 rot = validate_opt("rotation")
 rot_angle = 0
+clrVert = validate_opt("invert color")
 if rot == 'y' or rot == 'Y':
     rot_angle = input("Enter amount of rotation in degrees: ")
 
