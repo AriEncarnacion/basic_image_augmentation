@@ -58,7 +58,7 @@ def process_imgs_in_dir(dir_path):
             img = Image.open(file)
             if img.mode != 'RGB':
                 img = img.convert('RGB')
-            augment_image(file.name, img, horiz, vert, rot, rot_angle)
+            augment_image(file.name, img, horiz, vert, rot, rot_angle, clrVert)
         else:
             print(file.name, "was not an image file. Skipping...")
         
